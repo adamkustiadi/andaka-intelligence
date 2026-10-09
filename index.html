@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Andaka Intelligence — Smart Farm, Healthy Livestock</title>
+<style>
+:root{
+  --brown:#6B4F3A;--green:#526B4F;--beige:#F4EFE6;
+  --charcoal:#292923;--cream:#FBFAF7;--line:#E5E0D7;--white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:var(--cream);
+  color:var(--charcoal);line-height:1.6}
+.container{width:min(1080px,92%);margin:auto}
+header{padding:24px 0;border-bottom:1px solid var(--line);background:rgba(255,255,255,.8)}
+nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:800;letter-spacing:-.5px;color:var(--brown)}
+.logo span{color:var(--green)}
+.nav-link{color:#666;text-decoration:none;font-size:14px}
+.hero{padding:90px 0 75px;background:var(--white)}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#EEF4EC;color:var(--green);
+  padding:8px 13px;border-radius:30px;font-size:13px;font-weight:700;margin-bottom:22px}
+h1{font-size:clamp(42px,7vw,72px);line-height:1.02;letter-spacing:-3px;margin-bottom:20px}
+h1 span{color:var(--green)}
+.tagline{font-size:20px;color:#555;margin-bottom:14px;font-weight:600}
+.hero p{max-width:650px;color:#707068;font-size:17px}
+.avatar{width:210px;height:210px;border-radius:50%;margin:auto;background:var(--beige);
+  display:grid;place-items:center;border:10px solid #fff;box-shadow:0 15px 50px #6b4f3a18}
+.avatar-inner{width:145px;height:145px;border-radius:50%;background:var(--green);
+  display:grid;place-items:center;color:#fff;font-size:55px}
+.section{padding:80px 0}
+.section-title{font-size:34px;letter-spacing:-1.5px;margin-bottom:10px}
+.section-sub{color:#777;margin-bottom:35px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:30px;
+  box-shadow:0 8px 30px #4d3c2710}
+.card.dark{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
+.card h3{margin-bottom:18px;font-size:19px}
+.card ul{list-style:none}
+.card li{margin:13px 0;padding-left:24px;position:relative;color:#666}
+.card.dark li{color:#ddd}
+.card li:before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;
+  border-radius:50%;background:var(--green)}
+.card.dark li:before{background:#A9BE8D}
+.capabilities{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.capability{background:var(--white);padding:28px;border:1px solid var(--line);border-radius:18px}
+.icon{font-size:28px;margin-bottom:18px}.capability h3{margin-bottom:8px}
+.capability p{font-size:14px;color:#777}
+.sim{background:var(--charcoal);border-radius:24px;padding:32px;color:#fff;max-width:800px}
+.chat{background:#20201C;border:1px solid #3A3932;border-radius:16px;padding:20px;
+  min-height:180px;margin:22px 0}
+.msg{padding:11px 15px;border-radius:14px;max-width:78%;margin:10px 0;font-size:14px}
+.user{background:#3D4D39;margin-left:auto}.agent{background:#fff;color:var(--charcoal)}
+.typing{color:#A9BE8D;font-size:13px;display:none}
+.scenarios{display:flex;flex-wrap:wrap;gap:10px}
+.scenarios button,.cta{border:0;border-radius:10px;padding:12px 16px;font-weight:700;
+  cursor:pointer;transition:.2s}
+.scenarios button{background:#F0E8DC;color:var(--brown)}
+.scenarios button:hover{transform:translateY(-2px)}
+.cta-wrap{text-align:center;padding:80px 20px;background:var(--beige);border-radius:25px}
+.cta-wrap h2{font-size:36px;letter-spacing:-1px;margin-bottom:10px}
+.cta-wrap p{color:#666;margin-bottom:25px}
+.cta{display:inline-block;background:var(--green);color:#fff;text-decoration:none;
+  padding:14px 23px;box-shadow:0 8px 20px #526b4f30}
+.secondary{margin-left:8px;background:transparent;color:var(--brown);border:1px solid var(--brown)}
+footer{padding:30px 0;text-align:center;color:#888;font-size:13px}
+@media(max-width:760px){
+  .hero{padding:60px 0}.hero-grid,.compare{grid-template-columns:1fr}
+  .hero-grid{gap:40px}.avatar{width:160px;height:160px}.avatar-inner{width:110px;height:110px;font-size:42px}
+  h1{letter-spacing:-2px}.capabilities{grid-template-columns:1fr}
+  .section{padding:60px 0}.cta-wrap h2{font-size:29px}
+  .secondary{margin:10px 0 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">ANDAKA <span>CATTLEFARM</span></div>
+      <a class="nav-link" href="#simulation">AI Assistant</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="badge">🟢 Status: Active & Ready 24/7</div>
+      <h1>Andaka<br><span>Intelligence</span></h1>
+      <div class="tagline">Smart Farm, Healthy Livestock</div>
+      <p>AI Assistant yang membantu Andaka menganalisis data peternakan dan bisnis untuk menghasilkan insight, rekomendasi, dan keputusan yang lebih cepat dan terukur.</p>
+    </div>
+    <div class="avatar"><div class="avatar-inner">🐄</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">From Chaos to Clarity</h2>
+    <p class="section-sub">Mengubah data peternakan menjadi informasi yang siap digunakan.</p>
+    <div class="compare">
+      <div class="card">
+        <h3>⚠️ The Chaos</h3>
+        <ul>
+          <li>Data berat badan, kesehatan, stok, pembelian, dan penjualan tersebar.</li>
+          <li>Keputusan membutuhkan pencarian dan perbandingan data secara manual.</li>
+          <li>Client sulit mendapatkan informasi ternak secara cepat dan lengkap.</li>
+        </ul>
+      </div>
+      <div class="card dark">
+        <h3>✨ The Solution</h3>
+        <ul>
+          <li>Livestock Monitoring untuk memantau performa dan kesehatan ternak.</li>
+          <li>Business Analytics dan AI Decision Support untuk insight berbasis data.</li>
+          <li>Client & Scheduling Assistant untuk informasi ternak dan farm visit.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--beige)">
+  <div class="container">
+    <h2 class="section-title">Core Capabilities</h2>
+    <p class="section-sub">Satu assistant untuk menghubungkan data, bisnis, dan client.</p>
+    <div class="capabilities">
+      <div class="capability">
+        <div class="icon">📊</div>
+        <h3>Livestock & Business Analytics</h3>
+        <p>Menganalisis bobot, kesehatan, pembelian, penjualan, harga, stok, dan performa bisnis.</p>
+      </div>
+      <div class="capability">
+        <div class="icon">🐄</div>
+        <h3>Livestock Recommendation</h3>
+        <p>Membantu mencocokkan kebutuhan client dengan ternak berdasarkan data, availability, dan informasi ternak.</p>
+      </div>
+      <div class="capability">
+        <div class="icon">🤝</div>
+        <h3>Client & Farm Assistant</h3>
+        <p>Menyediakan informasi ternak, membantu scheduling, dan tetap menggunakan Human-in-the-Loop untuk keputusan penting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="simulation">
+  <div class="container">
+    <h2 class="section-title">Interactive Simulation</h2>
+    <p class="section-sub">Coba beberapa use case Andaka Intelligence.</p>
+    <div class="sim">
+      <strong>Andaka Intelligence</strong>
+      <div class="chat" id="chat">
+        <div class="msg agent">Halo! Saya Andaka Intelligence. Apa yang ingin Anda lakukan?</div>
+        <div class="typing" id="typing">● ● ● &nbsp; Andaka Intelligence sedang berpikir...</div>
+      </div>
+      <div class="scenarios">
+        <button onclick="simulate('livestock')">Cari Ternak</button>
+        <button onclick="simulate('analysis')">Analisis Bisnis</button>
+        <button onclick="simulate('visit')">Book Farm Visit</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="cta-wrap">
+    <h2>Ready to work smarter?</h2>
+    <p>Hubungi Andaka untuk mendapatkan informasi ternak atau mulai berdiskusi tentang kebutuhan Anda.</p>
+    <a class="cta" href="https://wa.me/6282312997286" target="_blank">💬 Chat with Andaka → WhatsApp</a>
+    <a class="cta secondary" href="#simulation">Explore Andaka Intelligence</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    Built with AI · AI Builder Bootcamp Showcase
+  </div>
+</footer>
+
+<script>
+function simulate(type){
+  const chat=document.getElementById("chat"),typing=document.getElementById("typing");
+  const data={
+    livestock:[
+      "Saya sedang mencari sapi untuk kebutuhan kurban.",
+      "Tentu. Saya bisa membantu mencocokkan kebutuhan Anda dengan Available Livestock berdasarkan jenis, bobot, harga, dan availability. Untuk kebutuhan lebih spesifik, saya akan menghubungkan Anda dengan tim Andaka."
+    ],
+    analysis:[
+      "Bagaimana performa penjualan ternak bulan ini?",
+      "Saya akan menganalisis data penjualan, harga, volume, dan tren untuk menemukan insight utama serta rekomendasi tindakan. Data penting tetap dapat dikonfirmasi oleh tim Andaka."
+    ],
+    visit:[
+      "Saya ingin berkunjung ke farm Andaka.",
+      "Siap. Saya dapat membantu mengecek kebutuhan kunjungan dan mengatur jadwal melalui Google Calendar. Setelah jadwal sesuai, tim Andaka akan melakukan konfirmasi."
+    ]
+  };
+  const [q,a]=data[type];
+  chat.innerHTML=`<div class="msg user">${q}</div><div class="typing" id="typing">● ● ● &nbsp; Andaka Intelligence sedang berpikir...</div>`;
+  typing=document.getElementById("typing");typing.style.display="block";
+  setTimeout(()=>{
+    typing.style.display="none";
+    chat.insertAdjacentHTML("beforeend",`<div class="msg agent">${a}</div>`);
+  },1000);
+}
+</script>
+</body>
+</html>
